@@ -85,13 +85,13 @@ fn impl_tokio_pg_mapper(
 
     let tokens = quote! {
         impl #impl_generics tokio_pg_mapper::FromTokioPostgresRow for #name #ty_generics #where_clause {
-            fn from_row(row: tokio_postgres::row::Row) -> ::std::result::Result<Self, tokio_pg_mapper::Error> {
+            fn from_row(row: tokio_postgres::Row) -> ::std::result::Result<Self, tokio_pg_mapper::Error> {
                 Ok(Self {
                     #(#fields),*
                 })
             }
 
-            fn from_row_ref(row: &tokio_postgres::row::Row) -> ::std::result::Result<Self, tokio_pg_mapper::Error> {
+            fn from_row_ref(row: &tokio_postgres::Row) -> ::std::result::Result<Self, tokio_pg_mapper::Error> {
                 Ok(Self {
                     #(#ref_fields),*
                 })
