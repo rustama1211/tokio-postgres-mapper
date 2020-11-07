@@ -61,7 +61,7 @@ pub extern crate tokio_pg_mapper_derive;
 pub use tokio_pg_mapper_derive::*;
 
 use tokio_postgres;
-use tokio_postgres::row::Row as TokioRow;
+use tokio_postgres::Row as TokioRow;
 
 use std::error::Error as StdError;
 use std::fmt::{Display, Formatter, Result as FmtResult};
